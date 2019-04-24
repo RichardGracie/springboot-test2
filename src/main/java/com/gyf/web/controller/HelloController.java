@@ -19,6 +19,7 @@ public class HelloController {
     @ResponseBody
     public String hello(@PathVariable("name") String name){
         return name+"：Hello,Springboot";
+
     }
 
     public static void main(String[] args) {
