@@ -18,7 +18,7 @@ import java.util.Map;
 @ControllerAdvice//控制器切面
 public class GlobalExceptionHandler {
 
-    //处理异常的方法
+   /* //处理异常的方法
     @ExceptionHandler(RuntimeException.class)//捕获运行时异常
     @ResponseBody//返回json
     public Map<String,Object> exceptionHandler() {
@@ -26,5 +26,5 @@ public class GlobalExceptionHandler {
         map.put("errorCode","101");
         map.put("errMsg","系统错误");
         return map;
-    }
+    }*/
 }

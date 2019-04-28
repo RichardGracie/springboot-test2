@@ -11,9 +11,13 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface UserMapper {
 
-    @Insert("insert into t_user (name,password) values (#{username},#{password})")
-    public int save(@Param("username") String username, @Param("password") String password);
+//    @Insert("insert into t_user (name,password) values (#{username},#{password})")
+//    public int save(@Param("username") String username, @Param("password") String password);
+//
+//    @Select("select * from t_user where name = #{username}")
+//    public User findByUsername(@Param("username") String username);
 
-    @Select("select * from t_user where name = #{username}")
-    public User findByUsername(@Param("username") String username);
+    public int save(String username,String password);
+
+    public User findByUsername(String username);
 }
