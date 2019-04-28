@@ -1,13 +1,21 @@
 package com.gyf;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+
 /**
  * Hello world!
  *
  */
-public class App 
+@EnableAutoConfiguration
+//@ComponentScan(basePackages = "com.gyf.web")
+@ComponentScan(basePackages = {"com.gyf.web","com.gyf.service"})
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        //启动spring项目
+        SpringApplication.run(App.class,args);
     }
 }

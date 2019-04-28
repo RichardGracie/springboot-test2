@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
  * Createed by  slix
  * 2019/4/23 21:17
  */
+
+
 @RestController //声明rest风格的控制器
 @EnableAutoConfiguration //自动配置，相当于写了spring的配置文件
 public class HelloController {
@@ -21,9 +23,11 @@ public class HelloController {
         return name+"：Hello,Springboot";
 
     }
-
-    public static void main(String[] args) {
-        //启动spring boot项目
-        SpringApplication.run(HelloController.class,args);
-    }
+/**
+ * 不用这种方式
+ */
+//    public static void main(String[] args) {
+//        //启动spring boot项目
+//        SpringApplication.run(HelloController.class,args);
+//    }
 }
