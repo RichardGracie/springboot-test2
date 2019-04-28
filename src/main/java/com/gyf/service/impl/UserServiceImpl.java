@@ -1,5 +1,6 @@
 package com.gyf.service.impl;
 
+import com.gyf.mapper.UserMapper;
 import com.gyf.service.IUerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,11 +15,10 @@ public class UserServiceImpl implements IUerService {
 
     //使用spring的jdbc
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private UserMapper userMapper;
+
     @Override
     public void register(String username, String password) {
-
-        String sql = "insert into t_user (name,password) values (?,?)";
-        jdbcTemplate.update(sql,username,password);
+        userMapper.save(username,password);
     }
 }

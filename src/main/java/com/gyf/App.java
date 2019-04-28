@@ -1,5 +1,6 @@
 package com.gyf;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 @EnableAutoConfiguration
+@MapperScan(basePackages = "com.gyf.mapper")
 //@ComponentScan(basePackages = "com.gyf.web")
 @ComponentScan(basePackages = {"com.gyf.web","com.gyf.service"})
 public class App

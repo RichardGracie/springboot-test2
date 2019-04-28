@@ -7,6 +7,4 @@ package com.gyf.service;
 public interface IUerService {
 
     public void register(String username,String password);
-
-    ;
 }

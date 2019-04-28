@@ -42,11 +42,19 @@
           <artifactId>spring-boot-starter-freemarker</artifactId>
       </dependency>
 
-      <!-- JDBC -->
+      <!-- spring JDBC -->
+      <!--<dependency>-->
+          <!--<groupId>org.springframework.boot</groupId>-->
+          <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+      <!--</dependency>-->
+
+      <!-- mybaties -->
       <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-jdbc</artifactId>
+          <groupId>org.mybatis.spring.boot</groupId>
+          <artifactId>mybatis-spring-boot-starter</artifactId>
+          <version>1.1.1</version>
       </dependency>
+
       <!-- 数据库驱动 -->
       <dependency>
           <groupId>mysql</groupId>
