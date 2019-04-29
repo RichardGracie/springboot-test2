@@ -1,10 +1,7 @@
-package com.gyf.service.impl;
+package com.gyf.test1.service;
 
-import com.gyf.mapper.UserMapper;
-import com.gyf.model.User;
-import com.gyf.service.IUerService;
+import com.gyf.test1.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,19 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class UserServiceImpl implements IUerService {
+public class UserServiceImpl{
 
     //使用spring的jdbc
     @Autowired
     private UserMapper userMapper;
 
-    @Override
     public void register(String username, String password) {
         userMapper.save(username,password);
-//        int i = 10/0;
     }
 
-    public User findByUsername(String username){
-        return userMapper.findByUsername(username);
-    };
 }

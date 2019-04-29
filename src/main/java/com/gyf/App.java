@@ -10,9 +10,8 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 @EnableAutoConfiguration
-@MapperScan(basePackages = "com.gyf.mapper")
 //@ComponentScan(basePackages = "com.gyf.web")
-@ComponentScan(basePackages = {"com.gyf.web","com.gyf.service"})
+@ComponentScan(basePackages = {"com.gyf.datasource","com.gyf.web","com.gyf.test1.service","com.gyf.test2.service"})
 public class App
 {
     public static void main( String[] args )

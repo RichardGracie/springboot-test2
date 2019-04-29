@@ -1,10 +1,9 @@
 package com.gyf.web.controller;
 
-import com.gyf.model.User;
-import com.gyf.service.IUerService;
+import com.gyf.test1.service.UserServiceImpl;
+import com.gyf.test2.service.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,37 +17,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("user")
 public class UserController {
 
-    /**
-     *
-     * 通过id查询用户的信息
-     *
-     */
-    @RequestMapping("{id}")
-    @ResponseBody
-    public User getInfo(@PathVariable() Integer id){
 
-        User user= new User("gyf","123456");
-        user.setId(id);
-//        int i = 10/0;
-        return user;
-    }
+
 //不用这种，比较单一
 //    public static void main(String[] args) {
 //        //启动spring boot项目
 //        SpringApplication.run(UserController.class,args);
 //    }
     @Autowired
-    private IUerService uerService;
+    private UserServiceImpl uerService;
+    @Autowired
+    private CustomerServiceImpl customerService;
     @RequestMapping("register")
     @ResponseBody
     public String register(String username,String password){
+        //把数据保存到test1数据库
         uerService.register(username,password);
+        //把数据保存到test2数据库
+        customerService.save(username, "120");
         return "success";
     }
 
-    @RequestMapping("find")
-    @ResponseBody
-    public User find(String username){
-        return uerService.findByUsername(username);
-    }
 }
