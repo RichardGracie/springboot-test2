@@ -45,4 +45,10 @@ public class UserController {
         uerService.register(username,password);
         return "success";
     }
+
+    @RequestMapping("find")
+    @ResponseBody
+    public User find(String username){
+        return uerService.findByUsername(username);
+    }
 }
